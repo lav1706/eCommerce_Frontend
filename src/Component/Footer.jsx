@@ -7,9 +7,10 @@ import {
   Room,
   Twitter,
 } from "@mui/icons-material";
+
 const Footer = () => {
   return (
-    <div className="flex">
+    <div className="flex flex-col sm:flex-row">
       <div className="flex flex-col flex-1 p-5">
         <h1>Raghav.s</h1>
         <p className="my-5">
@@ -33,7 +34,7 @@ const Footer = () => {
           </div>
         </div>
       </div>
-      <div className="flex-1 p-5 sm:display:none">
+      <div className="flex-1 p-5 sm:hidden">
         <div className="mb-6">Useful Links</div>
         <ul className="flex flex-wrap m-0 p-0 list-none">
           <li className="w-6/12 mb-2.5">Home</li>
@@ -61,7 +62,10 @@ const Footer = () => {
           <MailOutline style={{ marginRight: "10px" }} />{" "}
           contact@lavnishraghva00@gmail.com
         </div>
-        <img src="https://i.ibb.co/Qfvn4z6/payment.png" className="w-[50%]" />
+        <img
+          src="https://i.ibb.co/Qfvn4z6/payment.png"
+          className="w-[50%] sm:w-full"
+        />
       </div>
     </div>
   );

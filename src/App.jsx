@@ -9,11 +9,12 @@ const Login = lazy(() => import("./Pages/Login"));
 const Product = lazy(() => import("./Pages/Product"));
 const ProductLists = lazy(() => import("./Pages/ProductLists"));
 const Register = lazy(() => import("./Pages/Register"));
+
 import { Routes, Route, Navigate } from "react-router-dom";
 import Loader from "./Component/Loader";
 
 const App = () => {
-  const [user, setUser] = useState(true);
+  const [user] = useState(false);
   return (
     <>
       <Announcement />
@@ -36,12 +37,9 @@ const App = () => {
             path="/register"
             element={user ? <Navigate to="/" /> : <Register />}
           />
-          <Route path="/cart" element={<Cart />} />
-          <Route path={`/product/:id`} element={<Product />} />
-          <Route
-            path={`/product/:topLavelCategory`}
-            element={<ProductLists />}
-          />
+          <Route path="cart" element={<Cart />} />
+          <Route path={`product/:id`} element={<Product />} />
+          <Route path={`products/:cat`} element={<ProductLists />} />
         </Routes>
       </Suspense>
       <Newsletter />

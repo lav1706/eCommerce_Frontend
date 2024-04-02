@@ -1,8 +1,6 @@
 import { useLocation } from "react-router-dom";
-
-import Product from "../Component/Product";
 import { useState } from "react";
-import { PopularProducts } from "../data";
+import Products from "../Component/Products";
 
 const ProductLists = () => {
   // Hook to get the current location from the React Router
@@ -18,13 +16,16 @@ const ProductLists = () => {
     const value = e.target.value;
     setFilters({
       ...filters,
+
       [e.target.name]: value,
     });
   };
 
   return (
     <div>
-      <h1 className="m-5">Dresses</h1>
+      <h1 className="m-5 text-4xl font-black text-[#394867] capitalize">
+        {cat}
+      </h1>
       <div className="flex justify-between">
         <div className="m-5 ">
           <span className="text-xl font-semibold mr-5 sm:mr-0">
@@ -35,16 +36,16 @@ const ProductLists = () => {
             name="Color"
             onChange={handleFilters}
           >
-            <option disabled>Color</option>
-            <option>White</option>
-            <option>Black</option>
-            <option>Red</option>
-            <option>Blue</option>
-            <option>Yellow</option>
-            <option>Green</option>
+            <option>Color</option>
+            <option>white</option>
+            <option>black</option>
+            <option>red</option>
+            <option>blue</option>
+            <option>yellow</option>
+            <option>green</option>
           </select>
           <select name="size" onChange={handleFilters}>
-            <option disabled>Size</option>
+            <option>Size</option>
             <option>XS</option>
             <option>S</option>
             <option>M</option>
@@ -65,10 +66,7 @@ const ProductLists = () => {
       </div>
 
       <div className=" flex flex-wrap justify-between p-5">
-        <Product cat={cat} filters={filters} sort={sort} />
-        {/* {PopularProducts.map((item) => (
-          <Product item={item} key={item.id} />
-        ))} */}
+        <Products cat={cat} filters={filters} sort={sort} />
       </div>
     </div>
   );

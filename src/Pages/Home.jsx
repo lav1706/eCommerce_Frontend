@@ -1,12 +1,14 @@
 import Categories from "../Component/Categories";
 import Products from "../Component/Products";
-import Slider from "../Component/Slider";
+import Quotes from "../Component/Quotes";
 
 const Home = () => {
   return (
-    <div>
-      <Slider />
+    <div className="bg-[#Ffffff] px-16">
+      <Quotes />
+
       <Categories />
+
       <Products />
     </div>
   );
